@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SmartHouse</title>
+    <meta http-equiv="REFRESH" content="60"><meta name="viewport" content="width=480" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="wst.css">
+</head>
+<body><br>
+    <div class="main"><br>
+    <div class="head">SmartHouse</div>
+    <div class="mpge"><b>System state:</b></div>
+    <div class="lcol">
+        MQTT status:
+        <br>IP address:
+        <br>Uptime:
+</div>
+<div class="rcol">
+    %S_MQTT%
+    <br>%IPADDR%
+    <br>%UPTIME%
+</div>
+<div class="mpge"><b>Состояние:</b></div>
+
+<div class="lcol">
+    Текущее время: 
+<br>Влажность:
+<br>Освещенность:
+</div>
+
+<div class="rcol">
+%FTM% 
+<br>%SOIL% &percnt;.
+<br>%LIGHT% luX.
+</div>
+
+<br><hr>
+<div class="foot">
+<a href="/login">Settings</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/reset.html">Reset</a>
+</div>
+<div class="copr">copyright &copy; DMT 2020-2025</div>  
+</div>
+</body>
+</html>

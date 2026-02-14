@@ -1,0 +1,14 @@
+body {background-color:#c2c2c2;margin:0px;font-family: Tahoma; font: size 18px;line-height:20px;}
+.main {margin:0 auto;width:420px;}
+.head {padding: 10px; font-size: 24px; word-spacing: 5px;text-align: center;background-color: #78c2cc;color: #ffffff;}
+.mpge {float: inline-end; width: 410px; padding: 5px;background-color: #dad6d6; text-align: center;}
+.mpger {padding: 15px;background-color: #FFF; text-align: right;}
+.lcol {float: left; text-align: right; width: 190px;padding:10px;background-color: #FFF;}
+.rcol {float: right; text-align: right ; width: 190px;padding:10px;background-color: #FFF;}
+.wcol {float: left; text-align: right ; width: 400px;padding:10px;background-color: #FFF;}
+.foot {text-align: center;font-size: 16px;}
+.copr {text-align: center;padding: 3px; color: #1C6EA4;text-transform: uppercase;font-size: 12px; letter-spacing: 4px;}
+.onln {color: green;}
+.ofln {color: red;}
+a:link{color:#1C6EA4;}
+a:visited{color:#1C6EA4;}

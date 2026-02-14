@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>RDTC Weather station</title>
+        <meta name="viewport" content="width=480" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="stylesheet" href="wst.css">
+    </head>
+    <body>
+        <form method="POST" action="/set_config">
+            <br>
+            <div class="main"><br>
+                <div class="head">SETTINGS</div>
+                <div class="lcol">
+                    <b>MQTT Settings</b><br>
+                        <hr>
+                        Server : <input size="9" name="hostname" value=%MQTTSERVER% type="text" />
+                        <br>Update(s): <input size="9" name="refresh" value=%REFRESH% type="text" />
+                        <br>Login : <input size="9" name="login" value=%MQTTUSER% type="text" />
+                        <br>Password: <input size="9" name="pass" value=%MQTTPASS% type="text" />                       
+                </div>
+                <div class="rcol">
+                    <b>System settings</b>
+                    <hr>
+                    Update server:<input size="6" name="updateserver" value=%USERVER% type="text" />
+                    <br>Login:<input size="6" name="ulogin" value=%ULOGIN% type="text" />
+                    <br>Password:<input size="6" name="upass" value=%UPASS% type="text" />
+                    <br>&nbsp;
+
+                   
+                </div>
+                <div class="wcol">
+                    <b>Настройки освещения</b>
+                    <hr>
+                    Время освещения коридора:<input size="6" name="kdelay" value=%KDELAY% type="text" /> секунд <br>
+                    Время освещения тамбура:&nbsp;<input size="6" name="tdelay" value=%TDELAY% type="text" /> секунд <br>
+                    Время освещения ванной:&nbsp;&nbsp;<input size="6" name="bdelay" value=%BDELAY% type="text" /> секунд <br>
+                    Время включения LED:&nbsp;&nbsp;<input size="6" name="zdelay" value=%ZDELAY% type="text" /> секунд <br>
+                     <br><p><input type="checkbox" name="autolight" value=%LAUTO%>Датчик освещенности</p>
+                    <br/>
+                </div>
+                
+                <div class="mpge">
+                    <a href="/">Main page</a>&nbsp;|&nbsp;<a href="/update">Update firmware</a>&nbsp;|&nbsp;Save and reboot&nbsp;<input type="submit" value="OK" />
+                </div>
+            </div>    
+        </form>
+    </body>
+</html>
