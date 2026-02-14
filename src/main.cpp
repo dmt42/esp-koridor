@@ -1,4 +1,15 @@
+#define ESP8266
 #include <Arduino.h>
+#if defined(ESP32) || defined(LIBRETINY)
+#include <AsyncTCP.h>
+#include <WiFi.h>
+#elif defined(ESP8266)
+#include <ESP8266WiFi.h>
+#include <ESPAsyncTCP.h>
+#elif defined(TARGET_RP2040) || defined(TARGET_RP2350) || defined(PICO_RP2040) || defined(PICO_RP2350)
+#include <RPAsyncTCP.h>
+#include <WiFi.h>
+#endif
 #include <Adafruit_MCP23X17.h>      //MCP GPIO expander
 #include <PubSubClient.h>         // Mqtt stuff
 #include <NTPClient.h>            // NTP stuff
@@ -548,12 +559,11 @@ server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
     }
   });
  // config trap
-  server.on("/set_config", HTTP_POST, [](AsyncWebServerRequest *request){
-    int params = request->params();
+ server.on("/set_config", HTTP_POST, [](AsyncWebServerRequest *request){
+    size_t params = request->params();
     cfg["narodmon"]="0";
-    
-     for(int i=0;i<params;i++){ // some hardcoded shit, can be resided in processor but im too lazy 
-      AsyncWebParameter* p = request->getParam(i);
+     for(size_t i=0;i<params;i++){ // some hardcoded shit, can be resided in processor but im too lazy 
+      const AsyncWebParameter *p = request->getParam(i);
       Serial.printf("POST[%s]: %s\n", p->name().c_str(), p->value().c_str());
       cfg[p->name()] = p->value();
       //Serial.printf("json[%s]:%s\n",cfg[p->name()],cfg[p->value()]);
